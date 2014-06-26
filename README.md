@@ -1,4 +1,4 @@
 BLAKE
 =====
 
-BLAKE plugin for Cryptool 2.0
+BLAKE plugin for CrypTool 2.0
