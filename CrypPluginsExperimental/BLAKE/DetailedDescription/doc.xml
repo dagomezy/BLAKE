@@ -19,8 +19,7 @@
     hashed. <i>Salt</i> is optional, but if it is used its size must be 16 bytes if you pick either <i>BLAKE-224</i> or
     <i>BLAKE-256</i>. For the other two functions (<i>BLAKE-384</i> and <i>BLAKE-512</i>) its size must be 32 bytes.
     In the component settings you can select the BLAKE hash function you want to use (<i>BLAKE-224</i>, <i>BLAKE-256</i>,
-    <i>BLAKE-384</i>, <i>BLAKE-512</i>) and you can indicate, using the <i>Use salt</i> check box, if you want to
-    use a salt. If it is unchecked, the input <i>Salt</i> is ignored.
+    <i>BLAKE-384</i>, <i>BLAKE-512</i>).
   </usage>
 
   <usage lang="de-DE">

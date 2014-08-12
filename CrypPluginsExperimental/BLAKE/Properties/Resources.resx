@@ -157,13 +157,7 @@
     <value>Salt</value>
   </data>
   <data name="SaltDataTooltip" xml:space="preserve">
-    <value>Must be 16 bytes for BLAKE-224 and BLAKE-256, and 32 bytes for BLAKE-384 and BLAKE-512</value>
-  </data>
-  <data name="UseSaltCaption" xml:space="preserve">
-    <value>Use salt</value>
-  </data>
-  <data name="UseSaltTooltip" xml:space="preserve">
-    <value>Check if you want to use a salt</value>
+    <value>If used, its size must be 16 bytes for BLAKE-224 and BLAKE-256, and 32 bytes for BLAKE-384 and BLAKE-512</value>
   </data>
   <data name="WrongSaltSizeErrorMessage" xml:space="preserve">
     <value>ERROR: Wrong salt size. Salt size must be {0} bytes</value>

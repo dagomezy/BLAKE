@@ -228,34 +228,31 @@ namespace Cryptool.Plugins.BLAKE
             ulong[] s64 = new ulong[4] { 0, 0, 0, 0 };
             ulong[] t64;
 
-            if (settings.UseSalt)
+            switch (CheckSalt(SaltData))
             {
-                switch (CheckSalt(SaltData))
-                {
-                    case 0:
-                        // Nothing connected to InputSalt connector. Use default value for salt.
-                        break;
-                    case 1:
-                        // Salt size is different from the one required for BLAKE-224 and BLAKE-256.
-                        GuiLogMessage(string.Format(Resources.WrongSaltSizeErrorMessage, 16), NotificationLevel.Error);
-                        return;
-                    case 2:
-                        // Salt size is different from the one required for BLAKE-384 and BLAKE-512.
-                        GuiLogMessage(string.Format(Resources.WrongSaltSizeErrorMessage, 32), NotificationLevel.Error);
-                        return;
-                    default:
-                        // Salt size is correct. Fill the right salt variable depending on the BLAKE function selected.
-                        if (settings.SelectedFunction == (int)BLAKEFunction.BLAKE224 ||
-                            settings.SelectedFunction == (int)BLAKEFunction.BLAKE256)
-                        {
-                            s32 = BytesToUint32Block(SaltData);
-                        }
-                        else
-                        {
-                            s64 = BytesToUint64Block(SaltData);
-                        }
-                        break;
-                }
+                case 0:
+                    // Nothing connected to InputSalt connector. Use default value for salt.
+                    break;
+                case 1:
+                    // Salt size is different from the one required for BLAKE-224 and BLAKE-256.
+                    GuiLogMessage(string.Format(Resources.WrongSaltSizeErrorMessage, 16), NotificationLevel.Error);
+                    return;
+                case 2:
+                    // Salt size is different from the one required for BLAKE-384 and BLAKE-512.
+                    GuiLogMessage(string.Format(Resources.WrongSaltSizeErrorMessage, 32), NotificationLevel.Error);
+                    return;
+                default:
+                    // Salt size is correct. Fill the right salt variable depending on the BLAKE function selected.
+                    if (settings.SelectedFunction == (int)BLAKEFunction.BLAKE224 ||
+                        settings.SelectedFunction == (int)BLAKEFunction.BLAKE256)
+                    {
+                        s32 = BytesToUint32Block(SaltData);
+                    }
+                    else
+                    {
+                        s64 = BytesToUint64Block(SaltData);
+                    }
+                    break;
             }
 
             using (CStreamReader reader = InputStream.CreateReader())

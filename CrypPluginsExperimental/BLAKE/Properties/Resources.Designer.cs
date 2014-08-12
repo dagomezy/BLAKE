@@ -178,29 +178,11 @@ namespace BLAKE.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Must be 16 bytes for BLAKE-224 and BLAKE-256, and 32 bytes for BLAKE-384 and BLAKE-512.
+        ///   Looks up a localized string similar to If used, its size must be 16 bytes for BLAKE-224 and BLAKE-256, and 32 bytes for BLAKE-384 and BLAKE-512.
         /// </summary>
         internal static string SaltDataTooltip {
             get {
                 return ResourceManager.GetString("SaltDataTooltip", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Use salt.
-        /// </summary>
-        internal static string UseSaltCaption {
-            get {
-                return ResourceManager.GetString("UseSaltCaption", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Check if you want to use a salt.
-        /// </summary>
-        internal static string UseSaltTooltip {
-            get {
-                return ResourceManager.GetString("UseSaltTooltip", resourceCulture);
             }
         }
         

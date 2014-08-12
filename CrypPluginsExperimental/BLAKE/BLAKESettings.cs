@@ -50,13 +50,6 @@ namespace Cryptool.Plugins.BLAKE
             }
         }
 
-        [TaskPane("UseSaltCaption", "UseSaltTooltip", null, 1, false, ControlType.CheckBox)]
-        public bool UseSalt
-        {
-            get;
-            set;
-        }
-
         #endregion
 
         #region Events
